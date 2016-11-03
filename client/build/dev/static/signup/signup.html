@@ -1,0 +1,91 @@
+
+<div class="login-view">
+  <div ng-if="vm.needCheckLogin" class="login-checking tc-white"><i ng-class="{'mdi-sync icon-rotate-animation': !vm.userInfo, 'mdi-account': vm.userInfo}" class="icon icon--xl icon--flat mdi"></i>
+    <p class="loading-text">{{vm.userInfo ? vm.userInfo.name : 'Checking Login User...'}}</p>
+  </div>
+  <form name="vm.signupForm" ng-submit="vm.signup(vm.userDetails)" novalidate="novalidate" class="card">
+    <div class="card__header p+">We need following information from you.</div>
+    <div ng-if="vm.signupError" class="login-message {{vm.signupError.type}}">
+      <p class="tc-white">{{vm.signupError.text}}</p>
+    </div>
+    <div class="card__body p++">
+      <table>
+        <tr>
+          <th>Registration Details</th>
+        </tr>
+        <tbody>
+          <tr> 
+            <td>
+              <lx-text-field label="First Name" fixed-label="true">
+                <input type="text" ng-model="vm.userDetails.firstName" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+            <td>
+              <lx-text-field label="Last Name" fixed-label="true">
+                <input type="text" ng-model="vm.userDetails.lastName" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <lx-text-field label="Date of Birth" fixed-label="true">
+                <input type="date" ng-model="vm.userDetails.dateOfBirth" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+            <td>
+              <lx-text-field label="Email" fixed-label="true">
+                <input type="email" ng-model="vm.userDetails.email" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <lx-text-field label="Street" fixed-label="true">
+                <input type="text" ng-model="vm.userDetails.street" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+            <td>
+              <lx-text-field label="Building" fixed-label="true">
+                <input type="text" ng-model="vm.userDetails.building" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <lx-text-field label="State" fixed-label="true">
+                <input type="text" ng-model="vm.userDetails.state" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+            <td>
+              <lx-text-field label="Zip" fixed-label="true">
+                <input type="number" ng-model="vm.userDetails.zip" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <lx-text-field label="Cell" fixed-label="true">
+                <input type="number" ng-model="vm.userDetails.cell" required="required" aio-focus-me="true"/>
+              </lx-text-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <lx-text-field label="Password" fixed-label="true">
+                <input type="password" ng-model="vm.userDetails.password" required="required"/>
+              </lx-text-field>
+            </td>
+            <td>
+              <lx-text-field label="Confirm Password" fixed-label="true">
+                <input type="password" ng-model="vm.userDetails.confirmPassword" required="required"/>
+              </lx-text-field>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card__actions text-center p+">
+      <button type="submit" ng-disabled="vm.signupForm.$invalid || vm.isRequest" ng-class="{'btn--is-disabled': vm.signupForm.$invalid}" lx-ripple="lx-ripple" aio-loading-button="vm.isRequest" class="btn btn--l btn--blue btn--raised btn-login">Sign In</button>
+    </div>
+  </form>
+</div>
