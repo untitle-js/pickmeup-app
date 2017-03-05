@@ -3,7 +3,7 @@ module.exports = function (gulp, config, $, args) {
     var runSeq = require('run-sequence');
 
     // Build for development environment
-    gulp.task('build:dev', ['lint'], function (done) {
+    gulp.task('build:dev', function (done) {
         runSeq('clean', 'jade', 'styles', 'inject:bower',
             'inject:js:css', ['copy:images', 'copy:fonts'], done);
     });

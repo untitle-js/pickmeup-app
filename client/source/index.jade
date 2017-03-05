@@ -30,7 +30,7 @@ html(lang="en", ng-app= app, ng-strict-di)
             header.header-view(ui-view="header")
             .content
                 .sidebar-view(ui-view="sidebar", ng-class="{'show': showSidebar}")
-                .main-content
+                .main-content.backimg
                     .breadcrumb-view(ui-view="breadcrumb")
                     .main-view(ui-view="main")
             footer.footer-view(ui-view="footer")

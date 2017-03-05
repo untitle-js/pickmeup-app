@@ -9,7 +9,9 @@
         'app.login',
         'app.signup',
         'app.dashboard',
-        'app.phone'
+        'app.phone',
+        'app.add-car',
+        'app.carpool'
     ]);
 
 })();

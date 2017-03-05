@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-strict-di>
+<html lang="en" ng-app="appTest" ng-strict-di>
   <head>
     <style>
       <div class="ng-hide">{ display: none!important; }</div>
@@ -19,6 +19,8 @@
     <!-- endbuild -->
     <!-- build:css static/styles/app.css -->
     <!-- inject:css -->
+    <link rel="stylesheet" href="static/styles/add-car.css">
+    <link rel="stylesheet" href="static/styles/carpool.css">
     <link rel="stylesheet" href="static/styles/core.css">
     <link rel="stylesheet" href="static/styles/dashboard.css">
     <link rel="stylesheet" href="static/styles/home.css">
@@ -34,7 +36,7 @@
       <header ui-view="header" class="header-view"></header>
       <div class="content">
         <div ui-view="sidebar" ng-class="{'show': showSidebar}" class="sidebar-view"></div>
-        <div class="main-content">
+        <div class="main-content backimg">
           <div ui-view="breadcrumb" class="breadcrumb-view"></div>
           <div ui-view="main" class="main-view"></div>
         </div>
@@ -55,11 +57,14 @@
     <script src="static/vendor/angular-loading-bar/build/loading-bar.js"></script>
     <!-- endbower -->
     <!-- inject:mockDeps:js -->
+    <script src="static/vendor/angular-mocks/angular-mocks.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:js static/js/app.js -->
     <!-- inject:js -->
     <script src="static/app.module.js"></script>
+    <script src="static/add-car/add-car.module.js"></script>
+    <script src="static/carpool/carpool.module.js"></script>
     <script src="static/core/core.module.js"></script>
     <script src="static/dashboard/dashboard.module.js"></script>
     <script src="static/helper/helper.module.js"></script>
@@ -68,6 +73,14 @@
     <script src="static/login/login.module.js"></script>
     <script src="static/phone/phone.module.js"></script>
     <script src="static/signup/signup.module.js"></script>
+    <script src="static/test/e2e.module.js"></script>
+    <script src="static/add-car/add-car.controller.js"></script>
+    <script src="static/add-car/add-car.route.js"></script>
+    <script src="static/carpool/carpool.controller.js"></script>
+    <script src="static/carpool/carpool.form.controller.js"></script>
+    <script src="static/carpool/carpool.form.directive.js"></script>
+    <script src="static/carpool/carpool.route.js"></script>
+    <script src="static/carpool/carpool.service.js"></script>
     <script src="static/core/config.js"></script>
     <script src="static/core/error.constant.js"></script>
     <script src="static/core/event.constant.js"></script>
@@ -99,6 +112,10 @@
     <script src="static/phone/phone.service.js"></script>
     <script src="static/signup/signup.controller.js"></script>
     <script src="static/signup/signup.route.js"></script>
+    <script src="static/test/e2e.config.js"></script>
+    <script src="static/test/e2e.data.js"></script>
+    <script src="static/test/e2e.phone.js"></script>
+    <script src="static/test/e2e.user.js"></script>
     <!-- endinject -->
     <!-- inject:templates:js -->
     <!-- endinject -->
