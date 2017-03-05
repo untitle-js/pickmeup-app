@@ -1,0 +1,27 @@
+
+<div class="phone-main-view full-width"><a ui-sref="root.carpool.add" lx-ripple="lx-ripple" class="btn btn--m btn--green btn--raised"><i class="mdi mdi-plus-box mr"></i><span>Add New</span></a>
+  <div class="card mt+">
+    <table class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Drive Name</th>
+          <th class="hide-sm">Phone</th>
+          <th class="hide-sm">Location</th>
+          <th class="text-center">Starting Time</th>
+          <th class="text-center">Destination</th>
+          <th class="text-center">Car Details</th>
+          <th class="text-center">Seats</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td colspan="8" class="divider divider--dark"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="vm.carpool.length === 0" class="empty-row">
+          <td colspan="8">No carpool found!</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

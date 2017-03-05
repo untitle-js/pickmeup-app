@@ -1,0 +1,68 @@
+
+<div class="login-view">
+  <div ng-if="vm.needCheckLogin" class="login-checking tc-white"><i ng-class="{'mdi-sync icon-rotate-animation': !vm.userInfo, 'mdi-account': vm.userInfo}" class="icon icon--xl icon--flat mdi"></i>
+    <p class="loading-text">{{vm.userInfo ? vm.userInfo.name : 'Checking Login User...'}}</p>
+  </div>
+  <form name="vm.loginForm" ng-submit="vm.login(vm.credential)" novalidate="novalidate" class="card">
+    <div ng-if="vm.loginError" class="login-message {{vm.loginError.type}}"></div>
+  </form>
+  <p class="tc-white">{{vm.loginError.text}}
+    <div class="card__body p++"></div>
+  </p>
+  <table class="selvastyle">
+    <tr> 
+      <td>
+        <label for="Make">Make</label>
+      </td>
+      <td> 
+        <input ng-model="vm.make" required="required" aio-focus-me="true"/>
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        <label for="Model">Model</label>
+      </td>
+      <td> 
+        <input ng-model="vm.Model" required="required" aio-focus-me="true"/>
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        <label for="Occupancy">Occupancy</label>
+      </td>
+      <td> 
+        <input ng-model="vm.Occupancy" required="required" aio-focus-me="true"/>
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        <label for="Color">Color</label>
+      </td>
+      <td> 
+        <input ng-model="vm.Color" required="required" aio-focus-me="true"/>
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        <label for="LicensePlate">License Plate</label>
+      </td>
+      <td> 
+        <input ng-model="vm.LicensePlate" required="required" aio-focus-me="true"/>
+      </td>
+    </tr>
+    <tr>
+      <td> 
+        <label for="RideStartingTime">Ride Starting Time</label>
+      </td>
+      <td> 
+        <input ng-model="vm.RideStartingTime" required="required" aio-focus-me="true"/>
+      </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> 
+        <button type="button">Submit</button>
+      </td>
+    </tr>
+  </table>
+</div>
