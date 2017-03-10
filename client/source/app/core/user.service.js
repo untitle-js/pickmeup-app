@@ -21,14 +21,12 @@
 
         return service;
 
-        /////////////
-
         function isLoggedIn () {
             return _isLoggedIn;
         }
 
         function checkLoggedInStatus () {
-            return $http.get('api/user/loginstatus', {ignoreLoadingBar: true})
+            return $http.get('http://localhost:8080/user/loginstatus')
                 .then(_success)
                 .catch(_error);
 
@@ -50,22 +48,17 @@
         }
 
         function login (email, password) {
-            var req = {
-                email: email,
-                password: password
-            };
-            return $http.post('api/user/login', req)
+            return $http.get('http://localhost:8080/user/login?emailId='+ email+ '&password=' +password)
                 .then(_success)
                 .catch(_error);
 
-            function _success (response) {
-                var data = response.data;
-                if (response.status === 200 && data.code === 0) {
-                    _setUser(data.result.user);
-                    $rootScope.$broadcast(Event.AUTH_LOGIN, data.result.user);
-                    return data.result.user;
+            function _success (response) {                
+                if (response !== undefined && response !== null) {
+                    _setUser(response);
+                    $rootScope.$broadcast(Event.AUTH_LOGIN, response);
+                    return response;
                 } else {
-                    return $q.reject(data.message);
+                    return $q.reject(response.message);
                 }
             }
 

@@ -1,0 +1,98 @@
+
+<div flex="flex" class="card mt+">
+  <form name="vm.carpoolForm" ng-class="{'editing': vm.state === 'edit', 'adding': vm.state === 'add'}" class="form">
+    <div class="form-group">
+      <div class="form-item">
+        <div class="form-label"><span>DriverName:</span><span class="form-value">{{vm.carpool.drivername}}</span></div>
+        <div class="form-field">
+          <div ng-messages="vm.carpoolForm.modelInput.$error" ng-show="vm.carpoolForm.modelInput.showError" class="error-message">
+            <p ng-message="required">Model filed is required!</p>
+          </div>
+          <lx-text-field label="Driver Name" error="vm.carpoolForm.modelInput.$invalid &amp;&amp; vm.carpoolForm.modelInput.$dirty" class="form-control">
+            <input name="modelInput" type="text" ng-model="vm.carpool.drivername" required="required"/>
+          </lx-text-field>
+          <div ng-show="vm.carpoolForm.modelInput.$invalid &amp;&amp; vm.carpoolForm.modelInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.modelInput.showError = true" ng-mouseleave="vm.carpoolForm.modelInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation"></i></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div class="form-label"><span>Phone:</span><span class="form-value">{{vm.carpool.phone}}</span></div>
+        <div class="form-field">
+          <div ng-messages="vm.carpoolForm.modelInput.$error" ng-show="vm.carpoolForm.modelInput.showError" class="error-message">
+            <p ng-message="required">Phone filed is required!</p>
+          </div>
+          <lx-text-field label="Phone" error="vm.carpoolForm.modelInput.$invalid &amp;&amp; vm.carpoolForm.modelInput.$dirty" class="form-control">
+            <input name="phoneInput" type="text" ng-model="vm.carpool.phone" aio-validate-number="aio-validate-number" required="required"/>
+          </lx-text-field>
+          <div ng-show="vm.carpoolForm.modelInput.$invalid &amp;&amp; vm.carpoolForm.modelInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.modelInput.showError = true" ng-mouseleave="vm.carpoolForm.modelInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation"></i></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div class="form-label"><span>Location:</span><span class="form-value">{{vm.carpool.location}}</span></div>
+        <div class="form-field">
+          <div ng-messages="vm.carpoolForm.locationInput.$error" ng-show="vm.carpoolForm.locationInput.showError" class="error-message">
+            <p ng-message="required">Location filed is required!                   </p>
+          </div>
+          <lx-text-field label="Location" error="vm.carpoolForm.locationInput.$invalid &amp;&amp; vm.carpoolForm.locationInput.$dirty" class="form-control">
+            <input name="locationInput" type="text" ng-model="vm.carpool.location" required="required"/>
+          </lx-text-field>
+          <div ng-show="vm.carpoolForm.locationInput.$invalid &amp;&amp; vm.carpoolForm.locationInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.locationInput.showError = true" ng-mouseleave="vm.carpoolForm.locationInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation"></i></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div class="form-label"><span>StartingTime:</span><span class="form-value">{{vm.carpool.startingtime | date: 'MMMM d, yyyy HH:mm:ss'}}</span></div>
+        <div class="form-field">
+          <div ng-show="vm.startingtimeError" class="error-message">
+            <p>Starting time filed is required!</p>
+          </div>
+          <lx-text-field label="Starting Time" error="vm.carpoolForm.startingTimeInput.$invalid &amp;&amp; vm.carpoolForm.startingTimeInput.$dirty" class="form-control">
+            <input name="startingTimeInput" type="text" ng-model="vm.carpool.startingTime" required="required"/>
+          </lx-text-field>
+          <!--lx-date-picker.form-control(label="StartingTime", model="vm.carpool.startinngtimeDate",ng-click="vm.hasClicked = true")
+          -->
+          <div ng-show="vm.carpoolForm.startingTimeInput.$invalid &amp;&amp; vm.carpoolForm.startingTimeInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.startingTimeInput.showError = true" ng-mouseleave="vm.carpoolForm.startingTimeInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation"></i></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div class="form-label"><span>Destination:</span><span class="form-value">{{vm.carpool.destination}}</span></div>
+        <div class="form-field">
+          <div ng-messages="vm.carpoolForm.destinationInput.$error" ng-show="vm.carpoolForm.destinationInput.showError" class="error-message">
+            <p ng-message="required">Destination filed is required!</p>
+          </div>
+          <lx-text-field label="Destination" error="vm.carpoolForm.destinationInput.$invalid &amp;&amp; vm.carpoolForm.destinationInput.$dirty" class="form-control">
+            <input name="destinationInput" type="text" ng-model="vm.carpool.destination" required="required"/>
+          </lx-text-field>
+          <div ng-show="vm.carpoolForm.destinationInput.$invalid &amp;&amp; vm.carpoolForm.destinationInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.destinationInput.showError = true" ng-mouseleave="vm.carpoolForm.destinationInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation"></i></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div class="form-label"><span>Car Details:</span><span class="form-value">{{vm.carpool.cardetails}}</span></div>
+        <div class="form-field">
+          <div ng-messages="vm.carpoolForm.cardetailsInput.$error" ng-show="vm.carpoolForm.cardetailsInput.showError" class="error-message">
+            <p ng-message="required">Car details filed is required!</p>
+          </div>
+          <lx-text-field label="Car Details" error="vm.carpoolForm.cardetailsInput.$invalid &amp;&amp; vm.carpoolForm.cardetailsInput.$dirty" class="form-control">
+            <input name="cardetailsInput" type="text" ng-model="vm.carpool.cardetails" required="required"/>
+          </lx-text-field>
+          <div ng-show="vm.carpoolForm.cardetailsInput.$invalid &amp;&amp; vm.carpoolForm.cardetailsInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.cardetailsInput.showError = true" ng-mouseleave="vm.carpoolForm.cardetailsInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation"></i></div>
+        </div>
+      </div>
+      <div class="form-item">
+        <div class="form-label"><span>Seats:</span><span class="form-value">{{vm.carpool.seats}}</span></div>
+        <div class="form-field">
+          <div ng-messages="vm.carpoolForm.seatsInput.$error" ng-show="vm.carpoolForm.seatsInput.showError" class="error-message">
+            <p ng-message="required">Seats filed is required!</p>
+            <p ng-message="number">Seats must be a valid number!</p>
+          </div>
+          <lx-text-field label="Seats Size" error="vm.carpoolForm.seatsInput.$invalid &amp;&amp; vm.carpoolForm.seatsInput.$dirty" class="form-control">
+            <input name="seatsInput" type="text" ng-model="vm.carpool.size" aio-validate-number="aio-validate-number" required="required"/>
+          </lx-text-field>
+          <div ng-show="vm.carpoolForm.seatsInput.$invalid &amp;&amp; vm.carpoolForm.seatsInput.$dirty" class="error-icon"><i ng-mouseenter="vm.carpoolForm.seatsInput.showError = true" ng-mouseleave="vm.carpoolForm.seatsInput.showError = false" class="icon icon--red icon--circled mdi mdi-minus icon-breath-animation">      </i></div>
+        </div>
+      </div>
+    </div>
+    <div class="actions mt p+">           
+      <button type="submit" ng-click="vm.addCarpool(vm.carpool)" ng-disabled="vm.carpoolForm.$invalid " aio-loading-button="vm.isRequest" class="btn btn--m btn--green btn--raised btn-save">Save</button>
+      <button ng-click="vm.cancel()" ng-disabled="vm.isRequest" class="btn btn--m btn--white btn--raised btn-cancel">Cancel</button>
+    </div>
+  </form>
+</div>

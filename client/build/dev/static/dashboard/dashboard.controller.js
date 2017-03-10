@@ -16,23 +16,23 @@
             'bgc-pink-500'
         ];
 
-        init();
+        // init();
 
-        //////////////
+        // //////////////
 
-        function init () {
-            vm.userInfo = userAPI.getUserInfo();
-            _getProductsSummary();
-        }
+        // function init () {
+        //     vm.userInfo = userAPI.getUserInfo();
+        //     _getProductsSummary();
+        // }
 
-        function _getProductsSummary () {
-            userAPI.getProductSummary()
-                .then(function (data) {
-                    vm.products = data;
-                    vm.products.forEach(function (product) {
-                        product.link = 'root.' + product.name;
-                    });
-                });
-        }
+        // function _getProductsSummary () {
+        //     userAPI.getProductSummary()
+        //         .then(function (data) {
+        //             vm.products = data;
+        //             vm.products.forEach(function (product) {
+        //                 product.link = 'root.' + product.name;
+        //             });
+        //         });
+        // }
     }
 })();

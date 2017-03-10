@@ -25,12 +25,12 @@
                         }
                     },
                     data: {
-                        title: 'Add Car',
-                        _class: 'addCar'
+                        title: 'Register Car',
+                        _class: 'phone'
                     },
                     sidebar: {
                         icon: 'mdi-cellphone-android',
-                        text: 'Car'
+                        text: 'Register Car'
                     },
                     breadcrumb: 'Car'
                 }
