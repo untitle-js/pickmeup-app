@@ -57,6 +57,10 @@
                 vm.loginError = null;
                 // user was redirect to login page
                 if ($state.prev) {
+                    vm.userInfo = data.data;
+                        $timeout(function () {
+                            $state.go(_routeAfterLogin);
+                        }, 1000);
                     $state.go($state.prev.state, $state.prev.params);
                     $state.prev = null;
                 } else {

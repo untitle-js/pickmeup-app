@@ -8,10 +8,11 @@
         'app.home',
         'app.login',
         'app.signup',
-        'app.dashboard',
-        'app.phone',
+       // 'app.dashboard',
+     //   'app.phone',
         'app.add-car',
-        'app.carpool'
+        'app.carpool',
+        'app.carpool-form'
     ]);
 
 })();

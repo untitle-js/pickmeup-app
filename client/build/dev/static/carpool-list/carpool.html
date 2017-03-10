@@ -1,0 +1,39 @@
+
+<div class="phone-main-view full-width">
+  <div class="card mt+">
+    <table class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Drive Name</th>
+          <th class="hide-sm">Phone</th>
+          <th class="hide-sm">Location</th>
+          <th class="text-center">Starting Time</th>
+          <th class="text-center">Destination</th>
+          <th class="text-center">Car Details</th>
+          <th class="text-center">Seats</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td colspan="8" class="divider divider--dark"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="vm.carpools.length === 0" class="empty-row">
+          <td colspan="8">No carpool found!</td>
+        </tr>
+        <tr ng-repeat="carpool in vm.carpools track by carpool.id" class="data-table__clickable-row carpool-item">
+          <td><span>Raja </span></td>
+          <td class="hide-sm"><span>6128454420</span></td>
+          <td class="hide-sm"><span>{{::carpool.startingLocation}}</span></td>
+          <td class="hide-sm"><span>{{::carpool.startingTime}}</span></td>
+          <td class="hide-sm"><span>{{::carpool.destination}}</span></td>
+          <td class="hide-sm"><span>Audi Q4</span></td>
+          <td class="hide-sm"><span>4</span></td>
+          <td class="text-center"><a ng-click="vm.joinCarpool(carpool.id)" lx-ripple="lx-ripple" lx-tooltip="Join Carpool" class="btn btn--m btn--blue btn--fab"><i class="mdi mdi-information"></i></a>
+            <button ng-click="vm.deletecarpool(carpool.id, carpool.model)" lx-ripple="lx-ripple" lx-tooltip="Delete" class="btn btn--m btn--red btn--fab"><i class="mdi mdi-delete"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

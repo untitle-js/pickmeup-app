@@ -88,7 +88,8 @@
                                 state: toState.name,
                                 params: toParams
                             };
-                            $state.go('root.login');
+                            //$state.go('root.login');
+                            $state.go('root.add-car');
                         } else {
                             $state.go('root.home');
                         }
